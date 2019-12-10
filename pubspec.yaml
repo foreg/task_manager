@@ -1,5 +1,5 @@
 name: task_manager
-description: A new Flutter project.
+description: A simple way to track your tasks!
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,13 +31,21 @@ dependencies:
 
   fluro: ^1.5.1
 
+  flutter_launcher_icons: "^0.6.1"
+
   flutter_slidable: "^0.5.4"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  http: ^0.12.0
 
+flutter_icons:
+  image_path: "assets/img/active_task.png" 
+  android: true
+  ios: true
+
+dependency_overrides:
+  image: 2.0.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

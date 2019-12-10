@@ -16,23 +16,6 @@ class _TaskDetailBodyState extends State<TaskDetailBody> {
   final _formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    // return new Stack(
-    //   children: <Widget>[
-    //     new Container(
-    //       color: Theme.Colors.taskPageBackground,
-    //       child: new Center(
-    //         child: new Hero(
-    //           tag: 'task-icon-${task.id}',
-    //           child: new Image(
-    //             image: new AssetImage("assets/img/mars.png"),
-    //             height: Theme.Dimens.taskHeight,
-    //             width: Theme.Dimens.taskWidth,
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //   ]
-    // );
     return Scaffold(
         appBar: AppBar(
           title: Text('Просмотр задачи'),

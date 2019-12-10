@@ -1,4 +1,5 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/model/TaskState.dart';
 import 'package:task_manager/Theme.dart' as Theme;
@@ -45,7 +46,19 @@ class _MainPageState extends State<MainPage> {
                 widget.displayArchieved = !widget.displayArchieved;
               });
             },
-          )
+          ),
+          Builder(builder: (BuildContext context) {
+            return FlatButton(
+              child: const Text('Выйти', style: TextStyle(color: Colors.white),),
+              onPressed: () async {
+                final FirebaseUser user = Routes.user;
+                if (user != null) {
+                  _signOut();
+                }
+                Routes.auth(context, clearStack: true);
+              },
+            );
+          })
         ],
         title: widget.displayArchieved ? Text('Корзина') : Text('Задачи'),
         backgroundColor: widget.displayArchieved ? Theme.Colors.appBarArchieved : Theme.Colors.appBar,
@@ -78,6 +91,10 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Theme.Colors.taskAdd,
       ),
     );
+  }
+
+  void _signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 
   StatefulWidget buildElementAt() {
