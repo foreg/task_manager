@@ -30,7 +30,7 @@ class TaskDetailPage extends StatelessWidget {
     }
     else {
       return Center(
-        child: Preloader() //todo preloader,
+        child: Preloader()
       );
     }            
   }
